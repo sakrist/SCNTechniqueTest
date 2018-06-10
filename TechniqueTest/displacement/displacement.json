@@ -1,0 +1,35 @@
+{
+    "passes" : {
+        "displacement" : {
+            
+            "outputs" : {
+                "color" : "COLOR"
+            },
+            
+            "inputs" : {
+                "colorSampler" : "COLOR",
+                "noiseSampler" : "noiseSymbol",
+                "a_position" : "a_position-symbol"
+            },
+            
+            "program" : "displacement",
+            "metalVertexShader" : "displacementVertex",
+            "metalFragmentShader" : "displacementFragment",
+            "draw" : "DRAW_QUAD"
+        }
+    },
+    
+    "sequence" : [ "displacement"],
+    
+    "symbols" : {
+        "a_position-symbol" : {
+            "semantic" : "vertex"
+        },
+        
+        "noiseSymbol" : {
+            "image" : "noise.png",
+            "type" : "sampler2D"
+        }
+    }
+}
+

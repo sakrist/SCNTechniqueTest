@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>symbols</key>
+	<dict>
+		<key>noiseSymbol</key>
+		<dict>
+			<key>type</key>
+			<string>sampler2D</string>
+			<key>image</key>
+			<string>noise.png</string>
+		</dict>
+		<key>a_position-symbol</key>
+		<dict>
+			<key>semantic</key>
+			<string>vertex</string>
+		</dict>
+	</dict>
+	<key>sequence</key>
+	<array>
+		<string>displacement</string>
+	</array>
+	<key>passes</key>
+	<dict>
+		<key>displacement</key>
+		<dict>
+			<key>metalFragmentShader</key>
+			<string>displacementFragment</string>
+			<key>metalVertexShader</key>
+			<string>displacementVertex</string>
+			<key>program</key>
+			<string>displacement</string>
+			<key>draw</key>
+			<string>DRAW_QUAD</string>
+			<key>inputs</key>
+			<dict>
+				<key>a_position</key>
+				<string>a_position-symbol</string>
+				<key>noiseSampler</key>
+				<string>noiseSymbol</string>
+				<key>colorSampler</key>
+				<string>COLOR</string>
+			</dict>
+			<key>outputs</key>
+			<dict>
+				<key>color</key>
+				<string>COLOR</string>
+			</dict>
+		</dict>
+	</dict>
+</dict>
+</plist>
